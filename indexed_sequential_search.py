@@ -6,7 +6,6 @@ def indexed_sequential_search(arr, index, target, ascending=True):
     
     comparison_count = 0
     
-    # 1. Buscar en el índice para encontrar el rango adecuado
     for i in range(len(index) - 1):
         comparison_count += 1
         result += f"\nBloque {i + 1}:\n¿Es {index[i]} menor o igual que {target} y menor que {index[i + 1]}?\n"
@@ -15,7 +14,6 @@ def indexed_sequential_search(arr, index, target, ascending=True):
             end = arr.index(index[i + 1])
             result += f"Si, el rango es desde la posición {start} hasta la posición {end}.\nComparación {comparison_count}.\n"
 
-            # 2. Búsqueda secuencial en el bloque
             for j in range(start, end):
                 comparison_count += 1
                 result += f"\n¿Es {arr[j]} igual que {target}?\n"
@@ -41,5 +39,5 @@ def create_arr(elements_list):
 def create_index(arr, block_size):
     index = []
     for i in range(0, len(arr), block_size):
-        index.append(arr[i])  # Agregar el primer elemento de cada bloque
+        index.append(arr[i]) 
     return index
