@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from indexed_sequential_search import *
+import os
 
 
 def search(ascending=True):
@@ -42,10 +43,10 @@ def open_main_window():
     entry_target = tk.Entry(root, width=10, font=("Helvetica", 18))
     entry_target.pack(pady=20)
 
-    btn_search_asc = tk.Button(root, text="Buscar Ascendente", font=("Helvetica", 18), command=lambda: search(True))
+    btn_search_asc = tk.Button(root, text="Buscar a la derecha", font=("Helvetica", 18), command=lambda: search(True))
     btn_search_asc.pack(pady=20)
 
-    btn_search_desc = tk.Button(root, text="Buscar Descendente", font=("Helvetica", 18), command=lambda: search(False))
+    btn_search_desc = tk.Button(root, text="Buscar a la izquierda", font=("Helvetica", 18), command=lambda: search(False))
     btn_search_desc.pack(pady=20)
 
     global text_result
@@ -54,13 +55,20 @@ def open_main_window():
 
     root.mainloop()
 
+def open_pdf():
+    pdf_path = "Secuencial_Indexada.pdf"  # Ruta del archivo PDF existente
+    os.system(f"open {pdf_path}")
 
 splash_screen = tk.Tk()
 splash_screen.title("Bienvenido")
 splash_screen.attributes('-fullscreen', True)
 
 tk.Label(splash_screen, text="Método de Búsqueda Secuencial Indexada", font=("Helvetica", 30)).pack(pady=20)
-tk.Label(splash_screen, text="Este método busca un elemento en un arreglo utilizando un índice para reducir el número de comparaciones necesarias.", wraplength=800, font=("Helvetica", 20)).pack(pady=20)
+tk.Label(splash_screen, text="Este método ordena un arreglo utilizando el algoritmo de ordenamiento rápido.", wraplength=800, font=("Helvetica", 20)).pack(pady=20)
+
+btn_pdf = tk.Button(splash_screen, text="Conozca más sobre el método de búsqueda secuencial indexada", font=("Helvetica", 20), command=open_pdf)
+btn_pdf.pack(pady=20)
+
 tk.Label(splash_screen, text="Integrantes del equipo:", font=("Helvetica", 25)).pack(pady=20)
 tk.Label(splash_screen, text="1. Negron, Danna\n2. Patiño, Hugo\n3. Rios, Sebastian", font=("Helvetica", 20)).pack(pady=20)
 
