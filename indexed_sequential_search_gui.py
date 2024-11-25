@@ -64,7 +64,7 @@ splash_screen.title("Bienvenido")
 splash_screen.attributes('-fullscreen', True)
 
 tk.Label(splash_screen, text="Método de Búsqueda Secuencial Indexada", font=("Helvetica", 30)).pack(pady=20)
-tk.Label(splash_screen, text="Este método ordena un arreglo utilizando el algoritmo de ordenamiento rápido.", wraplength=800, font=("Helvetica", 20)).pack(pady=20)
+tk.Label(splash_screen, text="La búsqueda secuencial indexada es una técnica que combina la búsqueda secuencial tradicional con un índice previo para optimizar el proceso de búsqueda, especialmente en listas grandes. ", wraplength=800, font=("Helvetica", 20)).pack(pady=20)
 
 btn_pdf = tk.Button(splash_screen, text="Conozca más sobre el método de búsqueda secuencial indexada", font=("Helvetica", 20), command=open_pdf)
 btn_pdf.pack(pady=20)
