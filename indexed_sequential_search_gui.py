@@ -61,7 +61,6 @@ def open_pdf():
 
 splash_screen = tk.Tk()
 splash_screen.title("Bienvenido")
-splash_screen.attributes('-fullscreen', True)
 
 tk.Label(splash_screen, text="Método de Búsqueda Secuencial Indexada", font=("Helvetica", 30)).pack(pady=20)
 tk.Label(splash_screen, text="La búsqueda secuencial indexada es una técnica que combina la búsqueda secuencial tradicional con un índice previo para optimizar el proceso de búsqueda, especialmente en listas grandes. ", wraplength=800, font=("Helvetica", 20)).pack(pady=20)
